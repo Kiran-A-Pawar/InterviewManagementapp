@@ -1,0 +1,202 @@
+<div class="details">
+    <div class="row heading">
+        <div class="col-11"> <i class="fa fa-arrow-left arrowIcon" aria-hidden="true"></i>
+            <span class="headerText">CEO, Magma Fincorp, Kolkata</span>
+        </div>
+    </div>
+    <div class="row offerRow image" *ngFor="let offerDetails of extendedOffers">
+        <div class="col-1 image firstImg"> <img class="img-background"
+                src="https://images.markets.businessinsider.com/image/5bc5bdd5ea92b10d0e1a4f84-1514/sundar-pichai.jpg"
+                style="width: 45px; height: 45px;margin: auto; object-fit: cover; ">
+        </div>
+        <div class="col-2 contant name">
+            <div>{{offerDetails.name}}</div>
+            <div>{{offerDetails.address}}</div>
+            <div>{{offerDetails.post}}
+            </div>
+        </div>
+        <div class="col-2 contant">Offer Extended on
+            <div>
+                {{offerDetails.acceptedOfferDate}}
+            </div>
+        </div>
+        <div class="col-2 contant leftBorder">Offer Accepted on
+            <div>
+                {{offerDetails.extendedOnDate}}
+            </div>
+        </div>
+        <div class="col-1 contant leftBorder"> Date of joing
+            <div>
+                {{offerDetails.joiningDate}}
+            </div>
+        </div>
+        <div class="col-1 contant leftBorder"> Joing Status
+            <select class="dropdwon" name="demo" id="#">
+                <option value="one">Hire</option>
+                <option value="two">
+                    No Hire
+                </option>
+                <option value="three">Undecided</option>
+            </select>
+        </div>
+        <div class="col-1 contant leftBorder"> B.V
+            <div class="colDiv">
+
+                <select class="dropdwon" name="demo" id="#">
+                    <!-- <option selected="selected" value="one">Option 1</option> -->
+                    <option value="one">Hire</option>
+                    <option value="two">
+                        No Hire
+                    </option>
+                    <option value="three">Undecided</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="col-2 contant comment"> {{offerDetails.comment}}</div>
+    </div>
+
+    <div class="Prospects">Prospects</div>
+
+    <div class="row prospectsRow">
+        <div class="col-3 contantInProspects">Candidate Details</div>
+        <div class="col-3 contantInProspects">Interview schedule</div>
+        <div class="col-3 contantInProspects">Reference Check</div>
+        <div class="col-3 contantInProspects">comments</div>
+    </div>
+
+    <div class="row imgSection">
+        <div class="col-5 contantInImgDiv sectionDiv">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+
+            <span class="image dragDropdowmImg2"> <img class="img-background"
+                    src="https://images.markets.businessinsider.com/image/5bc5bdd5ea92b10d0e1a4f84-1514/sundar-pichai.jpg"
+                    style="width: 45px; height: 45px;margin: auto; object-fit: cover; ">
+            </span>
+            <span class="image dragDropdowmImg3"> <img class="img-background"
+                    src="https://images.markets.businessinsider.com/image/5bc5bdd5ea92b10d0e1a4f84-1514/sundar-pichai.jpg"
+                    style="width: 45px; height: 45px;margin: auto; object-fit: cover; ">
+            </span>
+            <span class="image dragDropdowmImg4"> <img class="img-background"
+                    src="https://images.markets.businessinsider.com/image/5bc5bdd5ea92b10d0e1a4f84-1514/sundar-pichai.jpg"
+                    style="width: 45px; height: 45px;margin: auto; object-fit: cover; ">
+            </span>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+
+        </div>
+        <div class="col-1 contantInImgDiv leads">Leads</div>
+        <div class="col-3 contantInImgDiv leads">Captured</div>
+        <div class="col-1 contantInImgDiv"></div>
+        <div class="col-1 contantInImgDiv"></div>
+    </div>
+
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let details of candidateDetails" cdkDrag>
+            <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+            <div class="row dropedMainRow">
+                <div class="col-1 image dragDropdowmImg"> <img class="img-background"
+                        src="https://images.markets.businessinsider.com/image/5bc5bdd5ea92b10d0e1a4f84-1514/sundar-pichai.jpg"
+                        style="width: 45px; height: 45px;margin: auto; object-fit: cover; ">
+                </div>
+                <div class="col-2 contantInMain secondDiv">
+                    <div>{{details.name}}</div>
+                    <div>{{details.post}}</div>
+                    <div>{{details.address}}</div>
+                </div>
+                <div class="col-1 contantInMain">
+                    <div><i class="fa fa-thumbs-up likeIcon" aria-hidden="true"></i></div>
+                    <div>{{details.hire}}</div>
+                    <div>{{details.date}}</div>
+                </div>
+                <div class="col-1">
+                    <ng-template [ngIf]="details.awaitingFeedback == true" [ngIfElse]="fedback">
+                        <div class="fedbackTrue">
+                            Awaiting Feedback
+                        </div>
+                    </ng-template>
+                    <ng-template #fedback>
+                        <div class="fedbackFalse">
+                            Awaiting Feedback
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="col-1 contantInMain">
+                    <ng-template [ngIf]="details.status == 'Undicided'" [ngIfElse]="template">
+                        <i class="fa fa-ban" aria-hidden="true"></i>
+                    </ng-template>
+                    <ng-template #template>
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                    </ng-template>
+                    <div>{{details.status}}</div>
+                    <div>{{details.date}}</div>
+                </div>
+                <div class="col-1 contantInMain">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <div>{{details.date}}</div>
+                </div>
+
+                <div class="col-1 contantInMain">{{details.value1}}</div>
+                <div class="col-1 contantInMain">{{details.value1}}</div>
+                <div class="col-3 contantInMain">Metus etiam. Platea aliquet vulputate. Egestas. Lacinia ultrices.
+                    Pharetra. Quisque odio morbi
+                    sod tea aliquet vulputate.teame
+                </div>
+                <div class="col-1 contextMenu">
+                    <button class="menuButton" mat-icon-button [matMenuTriggerFor]="menu"
+                        aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>dialpad</mat-icon>
+                            <span>Redial</span>
+                        </button>
+
+                        <button mat-menu-item>
+                            <mat-icon>notifications_off</mat-icon>
+                            <span>Disable alerts</span>
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="droped">
+        Dropped
+    </div>
+
+    <div class="row dropedRow">
+        <div class="col-1 dropName">
+            <div class="customIcon">s</div>
+        </div>
+        <div class="col-2 contantInDroped" style="width:225px; text-align: left !important;">
+            <div>Shridhar Joshi</div>
+            <div>Director, Piramal Enterprises</div>
+            <div>Mumbai</div>
+        </div>
+        <div class="col-1 contantInDroped lastdroped" style="margin-left:-40px ;">
+            <div><i class="fa fa-thumbs-up likeIcon" aria-hidden="true"></i></div>
+            <div>hire</div>
+            <div>1 jul 2018</div>
+        </div>
+        <div class="col-1 contantInDroped">
+            <div><i class="fa fa-thumbs-up likeIcon" aria-hidden="true"></i></div>
+            <div>hire</div>
+            <div>5 Sep</div>
+        </div>
+        <div class="col-1 contantInDroped"><i class="fa fa-calendar" aria-hidden="true"></i>
+            <div>1 Nov 2020</div>
+        </div>
+        <div class="col-1 contantInDroped"><i class="fa fa-calendar" aria-hidden="true"></i>
+            <div>21 Aug 2020</div>
+        </div>
+
+        <div class="col-1 contantInDroped textleft">4</div>
+        <div class="col-1 contantInDroped">3</div>
+        <div class="col-3 contantInDroped">Metus etiam. Platea aliquet vulputate. Egestas. Lacinia ultrices.
+            Pharetra. Quisque odio morbi
+            sod tea aliquet vulputate.teame
+        </div>
+    </div>
+</div>
