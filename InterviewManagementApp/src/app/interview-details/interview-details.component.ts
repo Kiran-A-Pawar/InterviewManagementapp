@@ -19,7 +19,7 @@ export class InterviewDetailsComponent implements OnInit {
       "acceptedOfferDate":"21 Jul 2020",
       "extendedOnDate": "23 Jul 2020",
       "joiningDate" : "1 Sep 2020",
-      "comment" : "Metus etiam. Platea aliquet vulputate. Egestas. Lacinia ultrices. Pharetra. Quisque odio morbi sod tea aliquet vulputate.teame"
+      "comment" : "Metus etiam. Platea aliquet vulputate. Egestas. Lacinia ultrices. Pharetra. Quisque odio morbi sod tea aliquet"
     }
   ];
 
