@@ -34,7 +34,7 @@ export class InterviewDetailsComponent implements OnInit {
       "value1": "8",
       "value2": "2",
       "status": "Undicided",
-      "date": "23 Aug 2020",
+      "date": "26 Aug 2020",
       "comment": "Metus etiam. Platea aliquet vulputate. Egestas. Lacinia ultrices. Pharetra. Quisque odio morbi sod tea aliquet "
     },
     {
