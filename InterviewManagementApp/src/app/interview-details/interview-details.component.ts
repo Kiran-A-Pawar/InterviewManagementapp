@@ -4,7 +4,7 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-interview-details',
   templateUrl: './interview-details.component.html',
-  styleUrls: ['./interview-details.component.css']
+  styleUrls: ['./interview-details.component.scss']
 })
 export class InterviewDetailsComponent implements OnInit {
 
@@ -46,7 +46,7 @@ export class InterviewDetailsComponent implements OnInit {
       "undecided": false,
       "value1": "5",
       "value2": "8",
-      "status": "No Hire",
+      "status": "Hire",
       "date": "29 Sep 2020",
       "comment": "Metus etiam. Platea aliquet vulputate. Egestas. Lacinia ultrices. Pharetra. Quisque odio morbi sod tea aliquet vulputate.teame"
     },

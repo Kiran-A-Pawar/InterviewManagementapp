@@ -144,17 +144,15 @@
                 <div class="col-1 contextMenu">
                     <button class="menuButton" mat-icon-button [matMenuTriggerFor]="menu"
                         aria-label="Example icon-button with a menu">
-                        <mat-icon>more_vert</mat-icon>
+                        <mat-icon class="morevertIcon">more_vert</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
                         <button mat-menu-item>
-                            <mat-icon>dialpad</mat-icon>
-                            <span>Redial</span>
+                            <span>Edit comment</span>
                         </button>
 
                         <button mat-menu-item>
-                            <mat-icon>notifications_off</mat-icon>
-                            <span>Disable alerts</span>
+                            <span>Hide</span>
                         </button>
                     </mat-menu>
                 </div>
